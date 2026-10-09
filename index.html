@@ -1,175 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usama Rajpoot | Portfolio</title>
+    <title>Usama Arfi | Professional Portfolio</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Font (Bebas Neue for large heads, plus Inter/Sora) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        bebas: ['"Bebas Neue"', 'sans-serif'],
+                        sora: ['Sora', 'sans-serif'],
+                    },
+                    colors: {
+                        brandGold: '#f59e0b', // Yellow-500
+                        brandDarkGold: '#d97706', // Yellow-600
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Sora', sans-serif; }
+        .grid-pattern {
+            background-image: radial-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-[#0c0c0e] text-slate-100 antialiased overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="text-2xl font-bold text-blue-600">Arfi<span class="text-slate-800">Tech</span></div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-slate-600 hover:text-blue-600 transition">About</a>
-                    <a href="#services" class="text-slate-600 hover:text-blue-600 transition">Services</a>
-                    <a href="#projects" class="text-slate-600 hover:text-blue-600 transition">Projects</a>
-                    <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Contact Me</a>
-                </div>
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0c0c0e]/80 backdrop-blur-md border-b border-white/5 py-4">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bebas tracking-widest text-brandGold hover:opacity-85 transition">
+                USAMA ARFI
+            </a>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-10 text-sm font-semibold uppercase tracking-wider text-slate-300">
+                <a href="#home" class="hover:text-brandGold transition">Home</a>
+                <a href="#about" class="hover:text-brandGold transition">About</a>
+                <a href="#services" class="hover:text-brandGold transition">Services</a>
+                <a href="#portfolio" class="hover:text-brandGold transition">Portfolio</a>
+                <a href="#contact" class="hover:text-brandGold transition">Contact</a>
+                <!-- Dark-gold Toggle (Visual) -->
+                <button class="w-12 h-6 bg-brandGold rounded-full p-1 flex items-center justify-end">
+                    <span class="w-4 h-4 bg-black rounded-full"></span>
+                </button>
             </div>
+            <!-- Mobile Menu Toggle Button (Visual) -->
+            <button class="md:hidden text-brandGold focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="pt-32 pb-20 px-4 bg-gradient-to-br from-blue-50 to-slate-100">
-        <div class="max-w-4xl mx-auto text-center mt-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
-                Hi, I'm <span class="text-blue-600">Usama Rajpoot</span>
-                <br><span class="text-2xl md:text-3xl text-slate-500 font-medium">(محمد اسامہ عارفی)</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
-                Bridging Healthcare and Technology. I specialize in building custom web applications, digital management systems, and high-quality AI-driven visual content for medical and educational institutions.
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#projects" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition transform duration-200">View My Work</a>
-                <a href="#contact" class="px-6 py-3 bg-white text-blue-600 font-semibold border border-blue-200 rounded-lg shadow hover:bg-blue-50 hover:-translate-y-1 transition transform duration-200">Hire Me</a>
+    <section id="home" class="min-h-screen pt-28 flex items-center relative overflow-hidden px-6 md:px-12">
+        <!-- Abstract Dot Patterns & Background Lighting -->
+        <div class="absolute inset-0 grid-pattern opacity-40 pointer-events-none"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-brandGold/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-brandGold/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10 relative">
+            <!-- Left Info Block -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <h1 class="text-5xl md:text-8xl font-extrabold uppercase font-bebas leading-none tracking-tight text-white">
+                    WELCOME TO <br>
+                    <span class="text-brandGold relative">
+                        MY PORTFOLIO
+                        <!-- Artistic golden handwritten "Creative" text overlapping -->
+                        <span class="absolute -top-6 -right-16 md:-top-10 md:-right-24 text-xl md:text-3xl lowercase font-serif italic text-brandGold/90 font-normal py-1 tracking-normal pr-4">Creative</span>
+                    </span>
+                </h1>
+                
+                <h2 class="text-xl md:text-2xl font-semibold text-slate-200">
+                    Hi, I'm Usama Arfi <span class="text-brandGold text-base md:text-lg block sm:inline"/span>
+                </h2>
+
+                <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    A passionate Software Developer, AI Content Creator & Medical Tech Innovator dedicated to bridging healthcare, coding, and digital design. Glimpses / promotes management systems, Web solutions and Integration & Clinical integrations and communications.
+                </p>
+
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#about" class="px-8 py-3.5 bg-brandGold hover:bg-brandDarkGold text-black font-bold rounded-full inline-flex items-center gap-3 transition-transform hover:-translate-y-0.5 shadow-lg shadow-brandGold/10">
+                        Learn More <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image Block (Custom Picture Box) -->
+            <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+                <!-- Large Backdrop Font -->
+                <div class="absolute -top-10 right-20 text-white/[0.03] text-[10rem] md:text-[14rem] font-bebas select-none font-bold uppercase pointer-events-none">PORT</div>
+                <div class="absolute -bottom-20 right-0 text-white/[0.03] text-[10rem] md:text-[14rem] font-bebas select-none font-bold uppercase pointer-events-none">FOLIO</div>
+
+                <div class="relative w-72 h-96 sm:w-80 sm:h-[450px] md:w-96 md:h-[500px] border border-brandGold/20 rounded-2xl bg-[#141418] overflow-hidden shadow-2xl flex justify-center items-end group">
+                    <!-- Gold Highlight Behind -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-brandGold/20 to-transparent opacity-80 group-hover:opacity-100 transition duration-500"></div>
+                    <!-- @uarajpoot37 image (Customized and formatted) -->
+                    <img src="usama.jpg" alt="Usama Arfi" class="h-[95%] w-auto object-cover object-center relative z-10 filter drop-shadow-2xl grayscale hover:grayscale-0 transition duration-500">
+                    
+                    <!-- Top & bottom Border highlights -->
+                    <div class="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-brandGold to-amber-500"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services / Skills Section -->
-    <section id="services" class="py-20 px-4 bg-white">
+    <!-- About / Background Section -->
+    <section id="about" class="py-24 bg-[#08080a] relative px-6 md:px-12 border-t border-white/5">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-brandGold/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Details & Text -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-block px-3 py-1 bg-brandGold/10 border border-brandGold/20 rounded-full text-brandGold text-xs uppercase tracking-widest font-semibold">ABOUT ME</div>
+                <h2 class="text-3xl md:text-5xl font-extrabold uppercase font-bebas text-white">
+                    Educating & Coding For The Future
+                </h2>
+                <p class="text-slate-400 leading-relaxed text-sm md:text-base">
+                    Currently pursuing a Bachelor's degree in Computer Science while developing expertise in graphic design, UI/UX, branding, and digital creativity. Continuously enhancing both technical and creative skills through academic learning and real-world design projects.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="p-5 bg-white/5 border border-white/5 rounded-xl hover:border-brandGold/25 transition">
+                        <h4 class="text-3xl font-extrabold text-brandGold font-bebas">B.Sc. CS</h4>
+                        <p class="text-xs text-slate-500 uppercase mt-1">Computer Science Student</p>
+                    </div>
+                    <div class="p-5 bg-white/5 border border-white/5 rounded-xl hover:border-brandGold/25 transition">
+                        <h4 class="text-3xl font-extrabold text-brandGold font-bebas">Multiple Field</h4>
+                        <p class="text-xs text-slate-500 uppercase mt-1">Specializations</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Side Imagery (Visual aesthetic only) -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm h-72 border border-white/10 rounded-2xl bg-gradient-to-tr from-[#121215] to-[#1e1e24] overflow-hidden p-6 flex flex-col justify-end">
+                    <div class="absolute top-6 left-6 text-brandGold/20 text-6xl font-bebas">EXPERIENCE</div>
+                    <h3 class="text-2xl font-bold font-bebas text-white z-10">FREELANCE DEVELOPER</h3>
+                    <p class="text-slate-400 text-xs mt-2 z-10 leading-relaxed">
+                        Designing professional logos, branding, social media graphics, and marketing materials for clients while delivering creative, modern, and high-quality digital solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / What I Offer -->
+    <section id="services" class="py-24 bg-[#0c0c0e] px-6 md:px-12 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16 text-slate-800">What I Do</h2>
+            <div class="text-center space-y-3 mb-16">
+                <div class="inline-block px-3 py-1 bg-brandGold/10 border border-brandGold/20 rounded-full text-brandGold text-xs uppercase tracking-widest font-semibold">SKILLS & SERVICES</div>
+                <h2 class="text-4xl md:text-6xl font-extrabold uppercase font-bebas text-white">WHAT I OFFER</h2>
+                <div class="w-16 h-1 bg-brandGold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-brandGold/40 hover:bg-white/[0.05] transition-all group">
+                    <div class="w-12 h-12 bg-brandGold/10 text-brandGold rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-brandGold group-hover:text-black transition">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Web Design</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Interactive interfaces & portals built with Tailwind & Javascript.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-brandGold/40 hover:bg-white/[0.05] transition-all group">
+                    <div class="w-12 h-12 bg-brandGold/10 text-brandGold rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-brandGold group-hover:text-black transition">
+                        <i class="fa-solid fa-user-nurse"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Med-Tech Integrations</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Custom Pharmacy and clinic workflow digital integrations.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-brandGold/40 hover:bg-white/[0.05] transition-all group">
+                    <div class="w-12 h-12 bg-brandGold/10 text-brandGold rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-brandGold group-hover:text-black transition">
+                        <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Content Production</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Aesthetic AI avatars, reels, and YouTube hub scripts.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-brandGold/40 hover:bg-white/[0.05] transition-all group">
+                    <div class="w-12 h-12 bg-brandGold/10 text-brandGold rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-brandGold group-hover:text-black transition">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Creative Branding</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Social assets, professional banners, and flyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section id="portfolio" class="py-24 bg-[#08080a] px-6 md:px-12 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+                <div>
+                    <div class="inline-block px-3 py-1 bg-brandGold/10 border border-brandGold/20 rounded-full text-brandGold text-xs uppercase tracking-widest font-semibold">MY LATEST PROJECTS</div>
+                    <h2 class="text-4xl md:text-6xl font-extrabold uppercase font-bebas text-white mt-2">SHOWCASING BEST WORK</h2>
+                </div>
+                <a href="#" class="text-brandGold font-semibold hover:text-brandDarkGold text-sm inline-flex items-center gap-2 group">
+                    View All Works <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+
+            <!-- Horizontal carousel styling on custom-looking project cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Service 1 -->
-                <div class="p-8 border border-slate-100 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-laptop-code"></i>
+                <!-- Project card 1 -->
+                <div class="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden hover:border-brandGold/45 group transition">
+                    <div class="h-56 bg-gradient-to-tr from-brandGold/5 to-amber-950/20 flex items-center justify-center relative">
+                        <i class="fa-solid fa-hospital text-5xl text-brandGold/40 group-hover:scale-110 transition duration-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Custom Web Solutions</h3>
-                    <p class="text-slate-600 mb-4">Development of single-page applications, management systems, and trackers using HTML, CSS, JS, Tailwind, Python, and Firebase.</p>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold uppercase tracking-widest text-brandGold">Healthcare software</div>
+                        <h3 class="text-xl font-bold text-white font-bebas">Pharmacy management app</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">A specialized dashboard and integration made for custom prescription layout pads and automated checkout inventories.</p>
+                    </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="p-8 border border-slate-100 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-hospital"></i>
+                <!-- Project card 2 -->
+                <div class="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden hover:border-brandGold/45 group transition">
+                    <div class="h-56 bg-gradient-to-tr from-brandGold/5 to-amber-950/20 flex items-center justify-center relative">
+                        <i class="fa-solid fa-school text-5xl text-brandGold/40 group-hover:scale-110 transition duration-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Medical Tech Workflows</h3>
-                    <p class="text-slate-600 mb-4">Leveraging clinical knowledge to build tailored pharmacy systems, custom digital prescription pads, and clinic management software.</p>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold uppercase tracking-widest text-brandGold">Academic integration</div>
+                        <h3 class="text-xl font-bold text-white font-bebas">school management portal</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Complete administrative workflow logic web portal designed and developed for SAIF EDUCATIONAL COMPLEX.</p>
+                    </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="p-8 border border-slate-100 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-photo-video"></i>
+                <!-- Project card 3 -->
+                <div class="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden hover:border-brandGold/45 group transition">
+                    <div class="h-56 bg-gradient-to-tr from-brandGold/5 to-amber-950/20 flex items-center justify-center relative">
+                        <i class="fa-solid fa-photo-film text-5xl text-brandGold/40 group-hover:scale-110 transition duration-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">AI Media & Branding</h3>
-                    <p class="text-slate-600 mb-4">Creating high-resolution AI visuals, digital avatars, promotional banners, and educational video content for digital campaigns.</p>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold uppercase tracking-widest text-brandGold">AI Visuals</div>
+                        <h3 class="text-xl font-bold text-white font-bebas">creative branding assets</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Digital promotional campaigns, video reels and education branding templates for platforms like Saleem Medical Complex.</p>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 bg-slate-50">
+    <!-- Client Reviews / Trust Block -->
+    <section class="py-24 bg-[#0c0c0e] px-6 md:px-12 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16 text-slate-800">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 transition">
-                        <i class="fas fa-school text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">School Management System</h3>
-                        <p class="text-slate-600 mb-4">A complete administrative web portal designed and developed for SAIF EDUCATIONAL COMPLEX.</p>
-                        <div class="flex gap-2">
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">HTML/JS</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 transition">
-                        <i class="fas fa-wallet text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">"4 Idiots" Expense Tracker</h3>
-                        <p class="text-slate-600 mb-4">A custom web application built to streamline and calculate shared living expenses and roommate allocations.</p>
-                        <div class="flex gap-2">
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Web App</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Logic/Math</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 transition">
-                        <i class="fas fa-file-medical text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Digital Medical Assets</h3>
-                        <p class="text-slate-600 mb-4">Custom prescription pad layouts and promotional banners designed for Saleem Medical Complex.</p>
-                        <div class="flex gap-2">
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">UI/UX</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Branding</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 transition">
-                        <i class="fas fa-user-nurse text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Arfi Nursing Hub</h3>
-                        <p class="text-slate-600 mb-4">Educational content creation combining clinical nursing skills with AI avatars and digital video scripts.</p>
-                        <div class="flex gap-2">
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">AI Generation</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Video Prod.</span>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="text-center space-y-3 mb-16">
+                <div class="inline-block px-3 py-1 bg-brandGold/10 border border-brandGold/20 rounded-full text-brandGold text-xs uppercase tracking-widest font-semibold">TESTIMONIALS</div>
+                <h2 class="text-4xl md:text-6xl font-extrabold uppercase font-bebas text-white">CLIENT REVIEWS</h2>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 bg-slate-900 text-white">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Let's Build Something Together</h2>
-            <p class="text-slate-400 mb-10">Whether you need a management system for your institute, digital branding, or technical troubleshooting, I'm ready to help.</p>
-            <a href="mailto:your-email@example.com" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition shadow-lg">
-                <i class="fas fa-envelope mr-2"></i> Get In Touch
-            </a>
-            
-            <div class="mt-12 flex justify-center space-x-6">
-                <!-- Add your actual links in the href attributes -->
-                <a href="#" class="text-slate-400 hover:text-white text-2xl transition"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-slate-400 hover:text-white text-2xl transition"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-slate-400 hover:text-white text-2xl transition"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex text-brandGold gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-400 italic">"Professional and creative developer. Outstanding work, highly recommended!"</p>
+                    <div class="text-xs font-semibold text-white">Ayesha Khan <span class="text-slate-500 font-normal">Business Owner</span></div>
+                </div>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-500 py-6 text-center text-sm">
-        <p>&copy; 2026 Usama Rajpoot. All rights reserved.</p>
-    </footer>
+                <!-- Testimonial 2 -->
+                <div class="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex text-brandGold gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-400 italic">"Quick delivery and excellent communication throughout our medical system deployment."</p>
+                    <div class="text-xs font-semibold text-white">Usman Ali <span class="text-slate-500 font-normal">Healthcare Manager</span></div>
+                </div>
 
-</body>
-</html>
+                <!-- Testimonial 3 -->
+                <div class="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex text-brandGold gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class
